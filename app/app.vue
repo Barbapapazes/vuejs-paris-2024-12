@@ -4,7 +4,7 @@ import type { FormSubmitEvent } from '@nuxt/ui'
 const { loggedIn } = useUserSession()
 
 // Fetch all tasks
-const { data } = useFetch('/api/task')
+const { data } = useFetch('/api/tasks')
 
 interface Schema {
   task: string
