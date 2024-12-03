@@ -4,7 +4,7 @@ import type { FormSubmitEvent } from '@nuxt/ui'
 const { loggedIn } = useUserSession()
 
 // Fetch all tasks
-const { data } = useFetch('/api/tasks')
+const { data, refresh } = useFetch('/api/tasks')
 
 interface Schema {
   task: string
@@ -16,7 +16,7 @@ const state = reactive<Schema>({
   task: '',
 })
 async function onSubmit(_event: FormSubmitEvent<Schema>) {
-  // Create a new task
+  // Create a new task (double nextTick 🙂)
 }
 </script>
 
