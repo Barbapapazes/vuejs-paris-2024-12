@@ -10,6 +10,7 @@ interface Schema {
   task: string
 }
 
+const input = useTemplateRef('input')
 const isLoading = ref(false)
 const state = reactive<Schema>({
   task: '',
@@ -53,6 +54,7 @@ async function onSubmit(_event: FormSubmitEvent<Schema>) {
                 class="grow"
               >
                 <UInput
+                  ref="input"
                   v-model="state.task"
                   placeholder="Create a new task"
                   :disabled="!loggedIn"
